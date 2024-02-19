@@ -1,7 +1,11 @@
 <script>
+import { store } from "../store";
+
 export default {
   data() {
-    return {};
+    return {
+      store,
+    };
   },
 };
 </script>
@@ -36,9 +40,11 @@ export default {
       </div>
       <div class="container-card">
         <div class="card-box">
-          <div v-for="" class="card p-4">
-            <div><img src="" alt="" /></div>
-            <h4></h4>
+          <div v-for="card in store.cards" class="card p-3">
+            <div>
+              <font-awesome-icon :icon="card.iconCard" class="icon-card" />
+            </div>
+            <h4 class="m-0">{{ card.titleCard }}</h4>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Praesentium ut cupiditate ad architecto quia ex.
@@ -136,10 +142,12 @@ export default {
         align-items: center;
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
         background-color: #f5f5f5;
         border: none;
         border-radius: 10px;
         color: #555;
+        line-height: 2rem;
 
         div {
           width: 50px;
@@ -149,10 +157,15 @@ export default {
           justify-content: center;
           align-items: center;
           border: 1px solid #555;
+
+          .icon-card {
+            font-size: 20px;
+          }
         }
 
         p {
           font-size: 12px;
+          margin: 0;
         }
       }
     }

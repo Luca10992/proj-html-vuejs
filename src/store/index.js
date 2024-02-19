@@ -4,20 +4,20 @@ export const store = reactive({
   linksHeader: ["HOME", "ABOUT", "SERVICES", "WORK", "ARTICLES"],
   cards: [
     {
-        iconCard: ,
-        titleCard: "Buildings",
+      iconCard: "fa-regular fa-building",
+      titleCard: "Buildings",
     },
     {
-        iconCard: ,
-        titleCard: "Renovate",
+      iconCard: "fa-solid fa-arrows-rotate",
+      titleCard: "Renovate",
     },
     {
-        iconCard: ,
-        titleCard: "Construct",
+      iconCard: "fa-solid fa-house-chimney",
+      titleCard: "Construct",
     },
     {
-        iconCard: ,
-        titleCard: "Exclusive",
+      iconCard: "fa-solid fa-truck",
+      titleCard: "Exclusive",
     },
   ],
 });
