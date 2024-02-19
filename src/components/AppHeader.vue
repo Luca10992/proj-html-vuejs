@@ -5,7 +5,15 @@ export default {
   data() {
     return {
       store,
+      linkActive: "HOME",
+      linkIndex: 0,
     };
+  },
+
+  methods: {
+    eventClickHeader(link, index) {
+      (this.linkActive = link), (this.linkIndex = index);
+    },
   },
 };
 </script>
@@ -21,9 +29,16 @@ export default {
       </div>
       <div>
         <ul>
-          <li v-for="link in store.linksHeader">
+          <li
+            @click="eventClickHeader(link, index)"
+            :class="this.linkIndex == index ? 'active' : ''"
+            v-for="(link, index) in store.linksHeader"
+          >
             {{ link }}
-            <div class="triangle-hover"></div>
+            <div
+              class="triangle-hover"
+              :class="this.linkIndex == index ? 'active' : ''"
+            ></div>
           </li>
           <li class="button"><button class="btn">GET QUOTE</button></li>
         </ul>
@@ -56,18 +71,6 @@ header {
 
       .button {
         padding: 0;
-        background-color: #fed03d;
-
-        &:hover {
-          background-color: #fada70;
-        }
-      }
-
-      .btn {
-        padding: 6px 28px;
-        border-radius: 0;
-        font-size: 12px;
-        color: #555;
       }
 
       li {
@@ -96,6 +99,11 @@ header {
         position: absolute;
         top: 70px;
         opacity: 0;
+      }
+
+      .active {
+        color: #fed03d;
+        opacity: 1;
       }
     }
   }
