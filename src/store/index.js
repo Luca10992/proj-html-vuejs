@@ -58,4 +58,39 @@ export const store = reactive({
     "project1-featured-294276386-600x600.jpg",
     "project3-featured-189023420-600x600.jpg",
   ],
+  // **SECTION 5
+  cardsValue: [
+    {
+      iconCard: "fa-solid fa-house-chimney",
+      line: "",
+      backgroundColor: "turquoise",
+      titleCard: "Great Services",
+      titleInfo:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ut cupiditate ad.",
+    },
+    {
+      iconCard: "fa-solid fa-gear",
+      line: "",
+      backgroundColor: "blue",
+      titleCard: "Highest Standard",
+      titleInfo:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ut cupiditate ad.",
+    },
+    {
+      iconCard: "fa-solid fa-users",
+      line: "",
+      backgroundColor: "orange",
+      titleCard: "Professional Team",
+      titleInfo:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ut cupiditate ad.",
+    },
+    {
+      iconCard: "fa-regular fa-lightbulb",
+      line: "",
+      backgroundColor: "green",
+      titleCard: "Creative Solution",
+      titleInfo:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ut cupiditate ad.",
+    },
+  ],
 });

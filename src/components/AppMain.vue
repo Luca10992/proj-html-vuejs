@@ -85,6 +85,30 @@ export default {
         </div>
       </div>
     </div>
+    <div class="section_5">
+      <div class="container py-5">
+        <div class="text-center">
+          <h3>Our Core Values</h3>
+          <div class="line"></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+            alias. Saepe perferendis iusto fuga adipisci ratione laboriosam
+            mollitia quaerat quod, inventore labore deserunt. Quidem quam veniam
+            tempore molestias quas tempora!
+          </p>
+        </div>
+        <div class="container-card">
+          <div class="card-box">
+            <div v-for="card in store.cardsValue" class="card">
+              <AppCard :card="card"></AppCard>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section_6">
+      <div class="container"></div>
+    </div>
   </main>
 </template>
 
@@ -197,10 +221,6 @@ export default {
 .section_4 {
   color: #555;
 
-  h3 {
-    font-weight: 300;
-  }
-
   p {
     font-size: 12px;
   }
@@ -230,5 +250,38 @@ export default {
       margin: 0;
     }
   }
+}
+
+// *************SECTION 5*************
+.section_5 {
+  color: #555;
+  background-color: #f5f5f5;
+
+  .text-center {
+    padding: 0 7rem;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .container-card {
+    width: 100%;
+
+    .card {
+      gap: 1rem;
+      padding: 1rem 0;
+      background-color: transparent;
+    }
+  }
+}
+
+// *************SECTION 6*************
+.section_6 {
+  height: 70vh;
+  background-image: url(../assets/construction/images/home-parallax-144609983.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>
