@@ -93,4 +93,16 @@ export const store = reactive({
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ut cupiditate ad.",
     },
   ],
+  // **SECTION 6
+  currentSlide: 0,
+  slides: [
+    {
+      testimonialImage: "home-testimonial-84268399.jpg",
+      testimonial: "HARRY SMITH - NEW HOME OWNER",
+    },
+    {
+      testimonialImage: "home-testimonial-113165296.jpg",
+      testimonial: "JANE BROWN - NEW HOME OWNER",
+    },
+  ],
 });

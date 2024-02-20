@@ -2,6 +2,7 @@
 import { store } from "../store";
 import AppCard from "./AppCard.vue";
 import AppCardImg from "./AppCardImg.vue";
+import AppSlider from "./AppSlider.vue";
 
 export default {
   data() {
@@ -10,7 +11,25 @@ export default {
     };
   },
 
-  components: { AppCard, AppCardImg },
+  methods: {
+    nextSlide() {
+      if (store.currentSlide < store.slides.length - 1) {
+        store.currentSlide++;
+      } else {
+        store.currentSlide = 0;
+      }
+    },
+
+    prevSlide() {
+      if (store.currentSlide > 0) {
+        store.currentSlide--;
+      } else {
+        store.currentSlide = store.slides.length - 1;
+      }
+    },
+  },
+
+  components: { AppCard, AppCardImg, AppSlider },
 };
 </script>
 
@@ -107,7 +126,15 @@ export default {
       </div>
     </div>
     <div class="section_6">
-      <div class="container"></div>
+      <div class="arrowleft" @click="nextSlide()">
+        <font-awesome-icon icon="fa-solid fa-chevron-left" />
+      </div>
+      <div class="arrowright" @click="prevSlide()">
+        <font-awesome-icon icon="fa-solid fa-chevron-right" />
+      </div>
+      <div class="container text-center py-5">
+        <AppSlider></AppSlider>
+      </div>
     </div>
   </main>
 </template>
@@ -278,10 +305,41 @@ export default {
 
 // *************SECTION 6*************
 .section_6 {
+  color: white;
   height: 70vh;
   background-image: url(../assets/construction/images/home-parallax-144609983.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .arrowleft,
+  .arrowright {
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.122);
+    }
+  }
+
+  .arrowleft {
+    left: 10rem;
+  }
+
+  .arrowright {
+    right: 10rem;
+  }
 }
 </style>
