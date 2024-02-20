@@ -1,5 +1,7 @@
 <script>
 import { store } from "../store";
+import AppCard from "./AppCard.vue";
+import AppCardImg from "./AppCardImg.vue";
 
 export default {
   data() {
@@ -7,6 +9,8 @@ export default {
       store,
     };
   },
+
+  components: { AppCard, AppCardImg },
 };
 </script>
 
@@ -41,15 +45,43 @@ export default {
       <div class="container-card">
         <div class="card-box">
           <div v-for="card in store.cards" class="card p-3">
-            <div>
-              <font-awesome-icon :icon="card.iconCard" class="icon-card" />
-            </div>
-            <h4 class="m-0">{{ card.titleCard }}</h4>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Praesentium ut cupiditate ad architecto quia ex.
-            </p>
+            <AppCard :card="card"></AppCard>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="section_3">
+      <div class="container-card">
+        <div class="card-box">
+          <div v-for="card in store.infoAgency" class="card">
+            <AppCard :card="card"></AppCard>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section_4">
+      <div class="container py-5">
+        <div class="text-center">
+          <h3>Explore Recent Work</h3>
+          <div class="line"></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem esse
+            dolorum magni ipsum distinctio nihil, delectus, similique voluptates
+            laudantium maiores magnam, exercitationem vel fugit quos minus
+            impedit at itaque repellat.
+          </p>
+        </div>
+        <div class="container-img">
+          <div class="img-box">
+            <div v-for="image in store.images" class="img">
+              <AppCardImg :image="image"></AppCardImg>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="doubleLine"></div>
+          <p>VIEW ALL PROJECT</p>
+          <div class="doubleLine"></div>
         </div>
       </div>
     </div>
@@ -64,6 +96,10 @@ export default {
   background-size: cover;
 
   .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 
     h1 {
@@ -86,6 +122,7 @@ export default {
 
 // ***********SECTION 2***********
 .section_2 {
+  z-index: 1;
   .ask-project {
     height: 100px;
     background-color: #fed03d;
@@ -115,59 +152,82 @@ export default {
   .container {
     padding: 5rem 0;
     text-align: center;
-    .line {
-      width: 200px;
-      height: 1px;
-      background-color: #fed03d;
-      margin: 2rem auto;
-    }
 
     p {
       font-size: 12px;
     }
   }
+
+  .card-box {
+    padding-bottom: 5rem;
+
+    .card {
+      background-color: #f5f5f5;
+      color: #555;
+      line-height: 2rem;
+    }
+  }
+}
+
+// *************SECTION 3***********
+.section_3 {
+  background-image: url(../assets/construction/images/home-244125289.jpg);
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
   .container-card {
-    width: 80%;
-    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     .card-box {
+      padding: 0 8rem;
+      .card {
+        background-color: transparent;
+        color: #fed03d;
+      }
+    }
+  }
+}
+
+// **********SECTION 4************
+.section_4 {
+  color: #555;
+
+  h3 {
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .container-img {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    .img-box {
       width: 100%;
       display: flex;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 10px;
 
-      .card {
-        width: calc(100% / 4 - 20px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-        background-color: #f5f5f5;
+      .img {
+        width: calc(100% / 3 - 10px);
         border: none;
         border-radius: 10px;
-        color: #555;
-        line-height: 2rem;
-
-        div {
-          width: 50px;
-          aspect-ratio: 1;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid #555;
-
-          .icon-card {
-            font-size: 20px;
-          }
-        }
-
-        p {
-          font-size: 12px;
-          margin: 0;
-        }
+        overflow: hidden;
       }
+    }
+  }
+
+  .d-flex {
+    p {
+      margin: 0;
     }
   }
 }
