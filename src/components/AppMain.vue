@@ -92,7 +92,9 @@ export default {
             </div>
           </div>
         </div>
-        <div class="d-flex align-items-center justify-content-between">
+        <div
+          class="doubleLine-box d-flex align-items-center justify-content-between"
+        >
           <div class="doubleLine"></div>
           <p>VIEW ALL PROJECT</p>
           <div class="doubleLine"></div>
@@ -278,6 +280,7 @@ export default {
 
   .container-img {
     width: 100%;
+    height: 274px;
     margin: 0 auto;
     padding: 2rem 0;
 
@@ -296,7 +299,8 @@ export default {
     }
   }
 
-  .d-flex {
+  .doubleLine-box {
+    margin-top: 5rem;
     p {
       margin: 0;
     }
@@ -315,6 +319,7 @@ export default {
       gap: 1rem;
       padding: 1rem 0;
       background-color: transparent;
+      cursor: pointer;
     }
   }
 }

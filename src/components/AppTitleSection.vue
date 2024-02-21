@@ -8,7 +8,7 @@ export default {
     };
   },
 
-  props: { titlesSections: Array },
+  props: { titlesSections: String },
 };
 </script>
 <template>

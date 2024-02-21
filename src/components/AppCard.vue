@@ -77,6 +77,14 @@ export default {
 .section_5 {
   color: #555;
 
+  .card:hover div {
+    background-color: #fed03d;
+  }
+
+  .card:hover h4 {
+    color: #fed03d;
+  }
+
   div {
     width: 90px;
     aspect-ratio: 1;
