@@ -105,4 +105,25 @@ export const store = reactive({
       testimonial: "JANE BROWN - NEW HOME OWNER",
     },
   ],
+  // **SECTION 7
+  cardsImages: [
+    {
+      imageName: "blog-post-134132600-600x362.jpg",
+      titleCard: "Redeveloping Florida's Remote Southern Coast",
+      date: "December 7th, 2015",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis voluptatibus doloribus eaque, at dicta? Quis laudantium eius ex dolorum, omnis deserunt vitae, autem officiis eaque exercitationem, nulla velit perspiciatis!",
+    },
+    {
+      imageName: "blog-post-92486644-600x362.jpg",
+      titleCard: "How We Manage Large Construction Project",
+      date: "December 7th, 2015",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis voluptatibus doloribus eaque, at dicta? Quis laudantium eius ex dolorum, omnis deserunt vitae, autem officiis eaque exercitationem, nulla velit perspiciatis!",
+    },
+    {
+      imageName: "blog-post-332773904-600x362.jpg",
+      titleCard: "Future Proofing a Modern Home ",
+      date: "December 7th, 2015",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis voluptatibus doloribus eaque, at dicta? Quis laudantium eius ex dolorum, omnis deserunt vitae, autem officiis eaque exercitationem, nulla velit perspiciatis!",
+    },
+  ],
 });

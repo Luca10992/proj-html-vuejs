@@ -3,6 +3,7 @@ import { store } from "../store";
 import AppCard from "./AppCard.vue";
 import AppCardImg from "./AppCardImg.vue";
 import AppSlider from "./AppSlider.vue";
+import AppTextCardImg from "./AppTextCardImg.vue";
 
 export default {
   data() {
@@ -29,7 +30,7 @@ export default {
     },
   },
 
-  components: { AppCard, AppCardImg, AppSlider },
+  components: { AppCard, AppCardImg, AppSlider, AppTextCardImg },
 };
 </script>
 
@@ -136,6 +137,32 @@ export default {
         <AppSlider></AppSlider>
       </div>
     </div>
+    <div class="section_7">
+      <div class="container pt-5 text-center">
+        <div>
+          <h3>Latest News</h3>
+          <div class="line"></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eos
+            natus pariatur, similique dolores velit, magnam voluptate deserunt,
+            sint mollitia consectetur.
+          </p>
+        </div>
+        <div class="container-card">
+          <div class="card-box">
+            <div v-for="card in store.cardsImages" class="card">
+              <AppTextCardImg :card="card"></AppTextCardImg>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between py-5">
+          <div class="doubleLine"></div>
+          <p class="textLine">VIEW ALL PROJECT</p>
+          <div class="doubleLine"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section_8"></div>
   </main>
 </template>
 
@@ -340,6 +367,36 @@ export default {
 
   .arrowright {
     right: 10rem;
+  }
+}
+
+// *************SECTION 7*************
+.section_7 {
+  background-color: #f5f5f5;
+  color: #555;
+
+  .container {
+    p {
+      font-size: 12px;
+      padding: 0 7rem;
+    }
+
+    .textLine {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container-card {
+      width: 100%;
+      margin-top: 3rem;
+
+      .card {
+        color: #555;
+        overflow: hidden;
+        text-align: start;
+        width: calc(100% / 3 - 20px);
+      }
+    }
   }
 }
 </style>
