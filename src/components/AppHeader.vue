@@ -75,6 +75,7 @@ header {
 
       li {
         position: relative;
+        z-index: 1;
         cursor: pointer;
         display: flex;
         justify-content: center;

@@ -170,6 +170,11 @@ export default {
         </div>
       </div>
     </div>
+    <div class="arrow-box">
+      <a href="#">
+        <font-awesome-icon icon="fa-solid fa-chevron-up" />
+      </a>
+    </div>
   </main>
 </template>
 
@@ -436,6 +441,31 @@ export default {
     p {
       font-size: 10px;
     }
+  }
+}
+main {
+  position: relative;
+}
+
+.arrow-box {
+  background-color: hsla(0, 0%, 33%, 0.5);
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 12rem;
+  cursor: pointer;
+
+  a {
+    color: #888;
+  }
+
+  &:hover {
+    background-color: #545454;
   }
 }
 </style>
