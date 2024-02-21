@@ -2,6 +2,13 @@ import { reactive } from "vue";
 
 export const store = reactive({
   linksHeader: ["HOME", "ABOUT", "SERVICES", "WORK", "ARTICLES"],
+  titlesSections: [
+    "Specialists In Modern Construction",
+    "Explore Recent Work",
+    "Our Core Values",
+    "Latest News",
+    "Trusted Partners",
+  ],
   //   **SECTION 2
   cards: [
     {
@@ -125,5 +132,13 @@ export const store = reactive({
       date: "December 7th, 2015",
       text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis voluptatibus doloribus eaque, at dicta? Quis laudantium eius ex dolorum, omnis deserunt vitae, autem officiis eaque exercitationem, nulla velit perspiciatis!",
     },
+  ],
+  // **SECTION 8
+  partners: [
+    "home-logo11-219096700-320x202.png",
+    "home-logo10-219096700-320x202.png",
+    "home-logo2-219096700-320x202.png",
+    "home-logo1-219096700-320x202.png",
+    "home-logo9-219096700-320x202.png",
   ],
 });

@@ -4,6 +4,7 @@ import AppCard from "./AppCard.vue";
 import AppCardImg from "./AppCardImg.vue";
 import AppSlider from "./AppSlider.vue";
 import AppTextCardImg from "./AppTextCardImg.vue";
+import AppTitleSection from "./AppTitleSection.vue";
 
 export default {
   data() {
@@ -30,7 +31,13 @@ export default {
     },
   },
 
-  components: { AppCard, AppCardImg, AppSlider, AppTextCardImg },
+  components: {
+    AppCard,
+    AppCardImg,
+    AppSlider,
+    AppTextCardImg,
+    AppTitleSection,
+  },
 };
 </script>
 
@@ -52,15 +59,9 @@ export default {
         <div class="btn gray">GET A FREE QUOTE</div>
       </div>
       <div class="container">
-        <div>
-          <p class="fs-4">Specialists In Modern Construction</p>
-          <div class="line"></div>
-          <p class="px-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            fugiat facilis dolor nostrum impedit veritatis quidem sequi nam eos.
-            Lorem ipsum dolor sit amet.
-          </p>
-        </div>
+        <AppTitleSection
+          :titlesSections="store.titlesSections[0]"
+        ></AppTitleSection>
       </div>
       <div class="container-card">
         <div class="card-box">
@@ -81,16 +82,9 @@ export default {
     </div>
     <div class="section_4">
       <div class="container py-5">
-        <div class="text-center">
-          <h3>Explore Recent Work</h3>
-          <div class="line"></div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem esse
-            dolorum magni ipsum distinctio nihil, delectus, similique voluptates
-            laudantium maiores magnam, exercitationem vel fugit quos minus
-            impedit at itaque repellat.
-          </p>
-        </div>
+        <AppTitleSection
+          :titlesSections="store.titlesSections[1]"
+        ></AppTitleSection>
         <div class="container-img">
           <div class="img-box">
             <div v-for="image in store.images" class="img">
@@ -107,16 +101,9 @@ export default {
     </div>
     <div class="section_5">
       <div class="container py-5">
-        <div class="text-center">
-          <h3>Our Core Values</h3>
-          <div class="line"></div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-            alias. Saepe perferendis iusto fuga adipisci ratione laboriosam
-            mollitia quaerat quod, inventore labore deserunt. Quidem quam veniam
-            tempore molestias quas tempora!
-          </p>
-        </div>
+        <AppTitleSection
+          :titlesSections="store.titlesSections[2]"
+        ></AppTitleSection>
         <div class="container-card">
           <div class="card-box">
             <div v-for="card in store.cardsValue" class="card">
@@ -139,15 +126,9 @@ export default {
     </div>
     <div class="section_7">
       <div class="container pt-5 text-center">
-        <div>
-          <h3>Latest News</h3>
-          <div class="line"></div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eos
-            natus pariatur, similique dolores velit, magnam voluptate deserunt,
-            sint mollitia consectetur.
-          </p>
-        </div>
+        <AppTitleSection
+          :titlesSections="store.titlesSections[3]"
+        ></AppTitleSection>
         <div class="container-card">
           <div class="card-box">
             <div v-for="card in store.cardsImages" class="card">
@@ -162,7 +143,20 @@ export default {
         </div>
       </div>
     </div>
-    <div class="section_8"></div>
+    <div class="section_8">
+      <div class="container py-5">
+        <AppTitleSection
+          :titlesSections="store.titlesSections[4]"
+        ></AppTitleSection>
+        <div class="container-img">
+          <div class="img-box">
+            <div v-for="partner in store.partners" class="img">
+              <AppCardImg :image="partner"></AppCardImg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -230,10 +224,6 @@ export default {
   .container {
     padding: 5rem 0;
     text-align: center;
-
-    p {
-      font-size: 12px;
-    }
   }
 
   .card-box {
@@ -275,10 +265,6 @@ export default {
 .section_4 {
   color: #555;
 
-  p {
-    font-size: 12px;
-  }
-
   .container-img {
     width: 100%;
     margin: 0 auto;
@@ -310,14 +296,6 @@ export default {
 .section_5 {
   color: #555;
   background-color: #f5f5f5;
-
-  .text-center {
-    padding: 0 7rem;
-  }
-
-  p {
-    font-size: 12px;
-  }
 
   .container-card {
     width: 100%;
@@ -376,11 +354,6 @@ export default {
   color: #555;
 
   .container {
-    p {
-      font-size: 12px;
-      padding: 0 7rem;
-    }
-
     .textLine {
       margin: 0;
       padding: 0;
@@ -395,6 +368,28 @@ export default {
         overflow: hidden;
         text-align: start;
         width: calc(100% / 3 - 20px);
+      }
+    }
+  }
+}
+
+.section_8 {
+  .container-img {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    .img-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .img {
+        width: calc(100% / 5 - 10px);
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
       }
     }
   }

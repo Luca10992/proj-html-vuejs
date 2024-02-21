@@ -7,11 +7,13 @@ export default {
       store,
     };
   },
+
+  props: { titlesSections: Array },
 };
 </script>
 <template>
-  <div>
-    <h3>Latest News</h3>
+  <div class="text-center">
+    <h3>{{ titlesSections }}</h3>
     <div class="line"></div>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eos natus
@@ -21,4 +23,13 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.text-center {
+  color: #555;
+
+  p {
+    font-size: 12px;
+    padding: 0 6rem;
+  }
+}
+</style>
