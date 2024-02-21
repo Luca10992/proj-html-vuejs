@@ -8,6 +8,7 @@ export const store = reactive({
     "Our Core Values",
     "Latest News",
     "Trusted Partners",
+    "Building Ispiring Spaces",
   ],
   //   **SECTION 2
   cards: [

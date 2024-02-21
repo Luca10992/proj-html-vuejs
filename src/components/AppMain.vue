@@ -157,6 +157,17 @@ export default {
         </div>
       </div>
     </div>
+    <div class="section_9">
+      <div class="container d-flex py-5">
+        <AppTitleSection
+          :titlesSections="store.titlesSections[5]"
+        ></AppTitleSection>
+        <div class="btn-box">
+          <div class="btn">GET A FREE QUOTE</div>
+          <p>Only Takes a Few Second</p>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -391,6 +402,34 @@ export default {
         border-radius: 10px;
         overflow: hidden;
       }
+    }
+  }
+}
+
+.section_9 {
+  color: white;
+  background-image: url(../assets/construction/images/about-call-to-action-57862405.jpg);
+  background-size: cover;
+  background-position: bottom -100px right 0px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .btn-box {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .btn {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 10px;
     }
   }
 }
