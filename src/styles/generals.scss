@@ -86,3 +86,21 @@ h3 {
     }
   }
 }
+
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 107vw;
+  height: 140px;
+  border-radius: 50% 50% 0 0;
+  background-color: white;
+}
+
+.wave-top {
+  position: absolute;
+  top: 0;
+  width: 107vw;
+  height: 140px;
+  border-radius: 0 0 50% 50%;
+  background-color: white;
+}

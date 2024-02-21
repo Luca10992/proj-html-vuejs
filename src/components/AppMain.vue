@@ -72,6 +72,7 @@ export default {
       </div>
     </div>
     <div class="section_3">
+      <div class="wave-top"></div>
       <div class="container-card">
         <div class="card-box">
           <div v-for="card in store.infoAgency" class="card">
@@ -79,6 +80,7 @@ export default {
           </div>
         </div>
       </div>
+      <div class="wave-bottom"></div>
     </div>
     <div class="section_4">
       <div class="container py-5">
@@ -116,6 +118,7 @@ export default {
       </div>
     </div>
     <div class="section_6">
+      <div class="wave-top"></div>
       <div class="arrowleft" @click="nextSlide()">
         <font-awesome-icon icon="fa-solid fa-chevron-left" />
       </div>
@@ -125,6 +128,7 @@ export default {
       <div class="container text-center py-5">
         <AppSlider></AppSlider>
       </div>
+      <div class="wave-bottom"></div>
     </div>
     <div class="section_7">
       <div class="container pt-5 text-center">
@@ -258,11 +262,14 @@ export default {
 // *************SECTION 3***********
 .section_3 {
   background-image: url(../assets/construction/images/home-244125289.jpg);
-  height: 60vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .container-card {
     height: 100%;
@@ -332,7 +339,7 @@ export default {
 // *************SECTION 6*************
 .section_6 {
   color: white;
-  height: 70vh;
+  height: 100vh;
   background-image: url(../assets/construction/images/home-parallax-144609983.jpg);
   background-size: cover;
   background-position: center;
@@ -340,7 +347,23 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wave-top {
+    background-color: #f5f5f5;
+  }
+
+  .wave-bottom {
+    background-color: #f5f5f5;
+  }
 
   .arrowleft,
   .arrowright {
